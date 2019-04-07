@@ -1,0 +1,50 @@
+<md-toolbar class="md-toolbar-indigo">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleRight()" ng-hide="isOpenSidebar()">
+            <md-icon md-font-set="md">menu</md-icon>
+        </md-button>
+
+        <h2 flex md-truncate><a href="">NgJava - CRUD</a></h2>
+
+        <md-menu-bar>
+            <md-menu>
+                <button ng-click="$mdMenu.open()" id="btnGroupUserLoaded">
+                    <img ng-src="{{user[0].image}}" class="img_user_loaded img-fluid mr-2">
+                    {{user[0].name }}
+                </button>
+                <md-menu-content>
+                    <a href="account">
+                        <md-menu-item class="md-indent">
+                            <md-icon md-font-set="md">account_circle</md-icon>
+                            <md-button>Minha conta</md-button>
+                        </md-menu-item>
+                    </a>
+                    <a href="#" ng-click="logout()">
+                        <md-menu-item class="md-indent">
+                            <md-icon md-font-set="md">exit_to_app</md-icon>
+                            <md-button>Sair</md-button>
+                        </md-menu-item>
+                    </a>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+    </div>
+</md-toolbar>
+
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+
+    <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">MENU</h1>
+    </md-toolbar>
+    <md-content ng-controller="sidebar_controller" ng-cloak layout-padding>
+        <md-menu-content>
+            <md-menu-item class="md-indent" ng-repeat="item in list_sidebar">
+                <md-button ng-href="{{item.url}}" class="md-secondary">
+                    <md-icon md-font-set="md">{{item.icon}}</md-icon>
+                    {{item.name}}
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-content>
+
+</md-sidenav>

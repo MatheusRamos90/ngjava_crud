@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container mt-3" id="users_controller" ng-controller="users_list_controller" ng-cloak>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a ng-href="/"><md-icon>dashboard</md-icon> Dashboard</a></li>
+            <!--<li class="breadcrumb-item active" aria-current="page">Library</li>-->
+        </ol>
+    </nav>
+
+    <md-card md-theme="default" md-theme-watch>
+        <md-card-content>
+            <div class="row">
+                <div class="col">
+                    <h5 class="mt-3 mb-0">Usuários cadastrados</h5>
+                </div>
+                <div class="col mr-auto">
+                    <md-button ng-href="/users/create" class="md-raised md-primary mb-4 float-right"><md-icon md-font-set="md">person_add</md-icon> Novo</md-button>
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Data de Criação</th>
+                    <th scope="col">Última modificação</th>
+                    <th scope="col">Ação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="u in list_users">
+                    <th scope="row">{{ u.id }}</th>
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>
+                        <p ng-if="u.gender === 'm'">Masculino</p>
+                        <p ng-if="u.gender === 'f'">Feminino</p>
+                    </td>
+                    <td>
+                        <p ng-bind="formatDate(u.date_created) | date:'dd/MM/yyyy hh:mm:ss a' : 'UTC'"></p>
+                    </td>
+                    <td>
+                        <p ng-if="u.date_updated === null"></p>
+                        <p ng-if="u.date_updated !== null" ng-bind="formatDate(u.date_updated) | date:'dd/MM/yyyy hh:mm:ss a' : 'UTC'"></p>
+                    </td>
+                    <td>
+                        <md-button ng-click="edit_(u.id)" class="md-fab md-mini md-primary" aria-label="Editar">
+                            <md-icon>edit</md-icon>
+                        </md-button>
+                        <md-button ng-click="remove_(u, u.id)" class="md-fab md-mini md-danger" aria-label="Remover">
+                            <md-icon>remove</md-icon>
+                        </md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-card-content>
+    </md-card>
+
+</div>

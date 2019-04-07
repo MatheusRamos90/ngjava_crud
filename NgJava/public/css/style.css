@@ -1,0 +1,43 @@
+html,body{
+    background-color: #EEE;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+md-toolbar h2 a:hover{
+    color: #FFF;
+}
+
+md-menu-bar md-menu button{
+    color: #FFF !important;
+}
+
+.img_user_loaded{
+    height: 40px;
+}
+
+.md-danger{
+    background-color: #E53935 !important;
+}
+
+.breadcrumb{
+    background-color: #DDD;
+}
+.breadcrumb a{
+    color: #555;
+}
+.breadcrumb a:active{
+    font-weight: bolder;
+}
+
+.md-alert-success .md-toast-content{
+    background-color: #155724 !important;
+}
+.md-alert-warning .md-toast-content{
+    background-color: #856404 !important;
+}
+.md-alert-danger .md-toast-content{
+    background-color: #721c24 !important;
+}
