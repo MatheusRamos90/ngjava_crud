@@ -1,13 +1,15 @@
-AngularJS e Java (CRUD)
+## AngularJS e Java (CRUD)
 
 Este é um CRUD bem simples de cadastro de pessoas, utilizando as seguintes tecnologias:
 
-*** Front-end: HTML, CSS e AngularJS (Design Material com AngularJS Material > https://material.angularjs.org/latest/).
+* Front-end: HTML, CSS e AngularJS (Design Material com [AngularJS Material](https://material.angularjs.org/latest/)).
 
-*** Back-end: Java (Hibernate, Jersey e JPA).
+* Back-end: Java (Hibernate, Jersey e JPA).
+
+Foi utilizado as IDEs Eclipse e PHPStorm.
 
 -----
 
-Por Matheus Ramos - 07/04/2019
+### Por Matheus Ramos - 07/04/2019
 
-FIM
+## FIM
